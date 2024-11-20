@@ -63,20 +63,48 @@ const LikeWidget: React.FC<LikeWidgetProps> = ({likes}) => {
 
 }
 
+// BITTE NICHT:
+// let p: any = null;
+// function fetchBooksData() {
+// 	if (!p) {
+// 		p  = fetch("...");
+// 	}
+//
+// 	return p;
+// }
+
 const PriceWidget: React.FC<{ title: string; price: number }> = ({title, price}) => {
+	const [showPrices, setShowPrices] = useState(true);
+
+	// BITTE NICHT:
+	// const booksDataPromise = fetchBooksData();
+	// const booksData = use(booksDataPromise);
+
+	// const currencyContext = useContext(CurrencyContext);
+	const currencyContext = showPrices ? use(CurrencyContext) : null;
+
+
+	// const router = useRouter();
+
+	// const handleOpenBookClick() => {
+	// 	const router = use(RouterContext);
+	// 	router.open("...")
+	// }
+
 	// todo: consume context
 	//  use state to show/hide prices
 	console.log("PriceWidget", title);
 
-	const showPrices = true;
+	const realPrice = currencyContext ? price * currencyContext.rate : -1;
 
 	return (
 		<span className={"flex justify-between"}>
 			{showPrices && (
 				<span className={"p-2"}>
-         {price}
+         {realPrice} {currencyContext?.currency}
         </span>
 			)}
+			<Button onClick={() => setShowPrices(!showPrices)}>{showPrices ? "Hide Price" : "Show Price"}</Button>
 		</span>
 	);
 }
@@ -130,4 +158,8 @@ const ClientPage: NextPage = () => {
 	);
 };
 
-export default ClientPage;
+function ClientPageApp() {
+	return <CurrencyProvider><ClientPage /></CurrencyProvider>
+}
+
+export default ClientPageApp;
