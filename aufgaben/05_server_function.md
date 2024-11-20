@@ -14,3 +14,7 @@
   * Das Liken und die Aktualisierung der Darstellung sollte jetzt funktionieren
 * Zeig dem Benutzer Feedback an
   * Verwende den Rückgabewert von `increaseLikes` ("Liked" oder "Fehler") und zeige dem Benutzer entsprechendes Feedback an
+
+## Doku
+
+* https://19.react.dev/reference/rsc/server-functions#importing-server-functions-from-client-components
