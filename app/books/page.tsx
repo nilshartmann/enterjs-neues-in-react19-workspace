@@ -6,7 +6,7 @@ const BooksPage: NextPage = async () => {
   let books: Book[] = [];
   let errorMessage: string | null = null;
   try {
-    books = await ky<Book[]>('http://localhost:3001/booksss').json();
+    books = await ky<Book[]>('http://localhost:3001/book').json();
   } catch (error) {
     errorMessage = error instanceof Error ? error.message : 'An error occurred';
   }
