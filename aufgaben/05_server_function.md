@@ -5,7 +5,7 @@
 * Lege die Server Function an (`increaseLikes`)
   * In der Server Function musst du das (JSON-)Backend aufrufen
   * Du musst auf das Rückgabe-Promise warten. Die Daten daraus brauchst du aber nicht. Stattdessen weisen wir Next.js an, die Route neuzurendern:
-    * `invalidatePath("/books")`
+    * `revalidatePath("/books")`
   * Gib einen String zurück, "Liked" oder "Fehler", je nachdem, ob das Like geklappt hat oder nicht
 * Baue eine `LikeWidget`-Komponente
   * Du kannst deine client-seitige Komponete übernehmen und anpassen, oder eine neue Komponente bauen
