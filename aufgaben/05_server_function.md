@@ -14,4 +14,3 @@
   * Das Liken und die Aktualisierung der Darstellung sollte jetzt funktionieren
 * Zeig dem Benutzer Feedback an
   * Verwende den Rückgabewert von `increaseLikes` ("Liked" oder "Fehler") und zeige dem Benutzer entsprechendes Feedback an
-* 
