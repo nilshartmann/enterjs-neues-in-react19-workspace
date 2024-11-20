@@ -2,12 +2,6 @@
 
 - **Die *Likes* für ein Buch sollen erhöht werden!**
 - In der `ClientPage`-Komponente musst du eine Funktion bauen, die ein Buch im State aktualisiert:
-  - `handleUpdate`
-  - Die Funktion bekommt einen Parameter, nämlich das aktualisierte Buch (Typescript-Type `Book`)
-  - Du musst die Liste der `books` im State neu setzen:
-    - Alle Bücher bleiben unverändert
-    - Nur das aktualisierte Buch soll ausgetauscht werden
-    - `books.map(book => book.id === updatedBook.id ? updatedBook : book)`
 - Baue eine `LikeWidget`-Komponente
   - Diese braucht drei Properties:
     - `id: string` und `likes: number` eines Buches
